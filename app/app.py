@@ -106,7 +106,7 @@ def api_edit(grades1_id) -> str:
     content = request.json
     inputData = (content['Last_name'], content['First_name'], content['SSN'],
                  content['Test1'], content['Test2'],
-                 content['Test3'], content['Test4'],content['Final'], content['Grade'])
+                 content['Test3'], content['Test4'],content['Final'], content['Grade'],grades1_id)
     sql_update_query = """UPDATE grades t SET t.Last_name = %s, t.First_name = %s, t.SSN = %s, t.Test1 = 
         %s, t.Test2 = %s, t.Test3 = %s, t.Test4 = %s,t.Final= %s,t.Grade = %s  WHERE t.id = %s """
     cursor.execute(sql_update_query, inputData)
